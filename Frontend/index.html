@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option Pricing Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Option Pricing Calculator</h1>
+        <form id="pricingForm">
+            <label for="method">Choose Pricing Method:</label>
+            <select name="method" id="method">
+                <option value="blackScholes">Black-Scholes</option>
+                <option value="binomial">Binomial</option>
+                <option value="monteCarlo">Monte Carlo</option>
+            </select>
+
+            <label for="type">Option Type:</label>
+            <select name="type" id="type">
+                <option value="call">Call</option>
+                <option value="put">Put</option>
+            </select>
+
+            <label for="stockPrice">Stock Price ($):</label>
+            <input type="number" id="stockPrice" name="stockPrice" required>
+
+            <label for="strikePrice">Strike Price ($):</label>
+            <input type="number" id="strikePrice" name="strikePrice" required>
+
+            <label for="volatility">Volatility (%):</label>
+            <input type="number" id="volatility" name="volatility" step="0.01" required>
+
+            <label for="riskFreeRate">Risk-Free Rate (%):</label>
+            <input type="number" id="riskFreeRate" name="riskFreeRate" step="0.01" required>
+
+            <label for="time">Time to Expiration (years):</label>
+            <input type="number" id="time" name="time" step="0.01" required>
+
+            <button type="submit">Calculate</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
